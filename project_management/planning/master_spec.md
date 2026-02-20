@@ -1,5 +1,3 @@
-# master_spec.md
-
 ## Project Overview
 This portfolio is a high-performance, single-page technical showcase designed specifically for an NJIT student to secure professional internships. It utilizes a "Terminal Minimalist" aesthetic to signal technical competency and logic to engineering recruiters and faculty.
 
