@@ -1,49 +1,98 @@
-/* Import JetBrains Mono for that terminal feel */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700&display=swap');
-
+/* --- CSS VARIABLES (Sprint 2 Goal) --- */
 :root {
-  --bg-color: #121212;      /* Deep Charcoal */
-  --primary-color: #00FFAB; /* Terminal Green */
-  --text-color: #e0e0e0;
-  --sidebar-width: 260px;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'Inter', sans-serif;
+    --bg-primary: #121212;      /* Deep Charcoal */
+    --accent-primary: #00FFAB;  /* Neon Mint */
+    --text-main: #FFFFFF;
+    --text-secondary: #94A3B8;  /* Slate Grey */
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+    --sidebar-width: 280px;
 }
 
+/* --- RESET & BASE --- */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-sans);
-  display: flex; /* Sidebar layout */
-  min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    display: flex; /* Sidebar + Main Content Layout */
 }
 
-/* Sidebar Styling */
-aside {
-  width: var(--sidebar-width);
-  height: 100vh;
-  position: fixed;
-  border-right: 1px solid #333;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
+/* --- THE 12-COLUMN GRID SYSTEM --- */
+.content-area {
+    margin-left: var(--sidebar-width); /* Push content past fixed sidebar */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 40px;
 }
 
-/* Main Content Area */
-main {
-  margin-left: var(--sidebar-width); /* Push content past fixed sidebar */
-  flex-grow: 1;
-  padding: 4rem;
-  max-width: 1200px;
+/* Ensure sections span the full grid width for now */
+.section {
+    grid-column: span 12;
+    min-height: 80vh;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #222;
 }
 
-h1, h2, .mono {
-  font-family: var(--font-mono);
-  color: var(--primary-color);
+/* --- FIXED SIDEBAR --- */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    border-right: 1px solid #333;
+    padding: 40px 20px;
+    background-color: var(--bg-primary);
+}
+
+.terminal-prompt {
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.terminal-prompt::before {
+    content: "> ";
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-primary);
+}
+
+/* --- TYPOGRAPHY UTILITIES --- */
+h1, h2, h3, .mono-text {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mono-text {
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
 }

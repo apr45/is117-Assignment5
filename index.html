@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 5 - Portfolio</title>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJIT Portfolio | Terminal Minimalist</title>
+    <link rel="stylesheet" href="./src/style.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <aside>
-      <h2 class="mono">> APR45_</h2>
-      <nav>
-        </nav>
+    <aside class="sidebar">
+        <div class="nav-container">
+            <div class="terminal-prompt">whoami</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">.home()</a></li>
+                    <li><a href="#toolstack">.stack()</a></li>
+                    <li><a href="#projects">.work()</a></li>
+                    <li><a href="#experience">.history()</a></li>
+                    <li><a href="#contact">.contact()</a></li>
+                </ul>
+            </nav>
+        </div>
     </aside>
 
-    <main>
-      <section id="hero">
-        <h1 class="mono">System.init()</h1>
-        <p>Welcome to the terminal-themed portfolio layout.</p>
-      </section>
+    <main class="content-area">
+        <section id="hero" class="section">
+            <p class="mono-text">-- section: hero --</p>
+            <h1>NJIT Student & Engineer</h1>
+        </section>
+
+        <section id="toolstack" class="section">
+            <p class="mono-text">-- section: toolstack --</p>
+        </section>
+
+        <section id="projects" class="section">
+            <p class="mono-text">-- section: projects --</p>
+        </section>
+
+        <section id="experience" class="section">
+            <p class="mono-text">-- section: experience --</p>
+        </section>
+
+        <section id="contact" class="section">
+            <p class="mono-text">-- section: contact --</p>
+        </section>
     </main>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+</body>
 </html>
