@@ -377,3 +377,74 @@ h1, h2, h3, .mono-text {
     font-family: var(--font-mono);
     color: #444;
 }
+
+/* --- SPRINT 6: MOBILE RESPONSIVENESS & POLISH --- */
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .content-area {
+        margin-left: 0; /* Remove sidebar margin on mobile */
+        padding: 20px;
+        padding-bottom: 100px; /* Add space for bottom-docked nav */
+        grid-template-columns: 1fr; /* Single column stack */
+    }
+
+    /* Task 1: Bottom-docked Sidebar for Mobile */
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        width: 100%;
+        height: 70px;
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(10px);
+        border-right: none;
+        border-top: 1px solid #333;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav-list {
+        display: flex;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+}
+
+/* Task 3: Accessibility Polish (Contrast Ratios) */
+.nav-link {
+    color: var(--text-secondary); /* #94A3B8 */
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: var(--accent-primary); /* #00FFAB */
+    font-weight: bold;
+    border-left: 2px solid var(--accent-primary);
+    padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .nav-link.active {
+        border-left: none;
+        border-bottom: 2px solid var(--accent-primary);
+        padding-left: 0;
+        padding-bottom: 4px;
+    }
+}
