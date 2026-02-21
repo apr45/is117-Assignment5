@@ -96,3 +96,93 @@ h1, h2, h3, .mono-text {
     font-size: 0.8rem;
     margin-bottom: 1rem;
 }
+
+/* --- SPRINT 3: IDENTITY COMPONENTS --- */
+
+/* Task 3: Internship Badge with #00FFAB border */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border: 1px solid var(--accent-primary); /* #00FFAB */
+    color: var(--accent-primary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* Task 1: Terminal Cursor (CSS-only animation) */
+.terminal-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.prompt-prefix {
+    color: var(--text-secondary); /* #94A3B8 */
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.1em;
+    background-color: var(--accent-primary);
+    margin-left: 8px;
+    vertical-align: middle;
+    animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Task 2: Skill Pill Grid */
+.skill-category {
+    margin-top: 2.5rem;
+    grid-column: span 12;
+}
+
+.skill-category h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    font-family: var(--font-mono);
+    border: 1px solid #333; /* Default border */
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover uses the specified #00FFAB border */
+.pill:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background-color: rgba(0, 255, 171, 0.05);
+}
+
+.hero-bio {
+    max-width: 600px;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+}
